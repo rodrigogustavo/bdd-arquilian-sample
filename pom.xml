@@ -12,14 +12,74 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
     </dependency>
+  	<dependency>
+	  	<groupId>org.eclipse.persistence</groupId>
+	  	<artifactId>eclipselink</artifactId>
+		<version>2.6.5</version>
+	</dependency>
+	<dependency>
+		<groupId>org.glassfish.main.extras</groupId>
+		<artifactId>glassfish-embedded-all</artifactId>
+		<version>4.1.2</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>com.github.cukespace</groupId>
+		<artifactId>cukespace-core</artifactId>
+		<version>1.6.7</version>
+		<scope>test</scope>
+		<exclusions>
+			<exclusion>
+				<groupId>info.cukes</groupId>
+				<artifactId>cucumber-java</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>info.cukes</groupId>
+		<artifactId>cucumber-java8</artifactId>
+		<version>1.2.5</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>info.cukes</groupId>
+		<artifactId>cucumber-junit</artifactId>
+		<version>1.2.5</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.jboss.arquillian.container</groupId>
+		<artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+		<version>1.0.2</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.jboss.arquillian.junit</groupId>
+		<artifactId>arquillian-junit-container</artifactId>
+		<version>1.4.0.Final</version>
+		<scope>test</scope>
+	</dependency>
   </dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>1.4.0.Final</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
