@@ -58,5 +58,28 @@
 		<version>1.2.5</version>
 		<scope>test</scope>
 	</dependency>
+	<dependency>
+		<groupId>org.jboss.arquillian.container</groupId>
+		<artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+		<version>1.0.2</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.jboss.arquillian.junit</groupId>
+		<artifactId>arquillian-junit-container</artifactId>
+		<version>1.4.0.Final</version>
+		<scope>test</scope>
+	</dependency>
   </dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>1.4.0.Final</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

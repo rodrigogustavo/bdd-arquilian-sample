@@ -3,9 +3,12 @@ package com.rodrigo.bdd_arquilian_sample;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +17,8 @@ import javax.persistence.Table;
 public class Game {
 
 	@Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(sequenceName = "SEQ_GAMES", allocationSize = 1, name = "SEQ_GAMES")
 	private BigDecimal id;
 
 	private String title;
